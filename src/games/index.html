@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Juegos — TFG</title>
+        <link rel="stylesheet" href="../common/css/base.css">
+        <link rel="stylesheet" href="css/games.css">
+    </head>
+    <body>
+        <main class="container">
+            <h1 data-intl="games.sectionTitle">Sección Juegos</h1>
+            <p data-intl="games.sectionIntro">Desarrolla los juegos aquí. Ejemplo de juego disponible:</p>
+            <div class="button-row">
+                <button id="start-game1" data-intl="games.openGame1">Abrir Juego 1</button>
+                <button id="back" data-intl="games.back">Volver</button>
+            </div>
+        </main>
+
+        
+
+        <script src="src/locales/es.js"></script>
+        <script src="src/locales/en.js"></script>
+        <script src="src/common/js/intl.js"></script>
+
+        <script type="module">
+            document.getElementById('start-game1').addEventListener('click', ()=>{
+                location.href = 'game1.html';
+            });
+            document.getElementById('back').addEventListener('click', ()=>{ 
+                location.href='../../index.html' 
+            });
+            
+            if(window.intl && typeof window.intl.initializeIntl === 'function'){
+                window.intl.initializeIntl().catch(()=>{});
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Juego 1 — TFG</title>
+        <link rel="stylesheet" href="../common/css/base.css">
+        <link rel="stylesheet" href="js/game1/game1.css">
+    </head>
+    <body>
+        <main class="container">
+            <h1>Juego 1 (esqueleto)</h1>
+            <div id="game-root" class="game-canvas">Aquí irá el juego 1</div>
+            <div class="button-row">
+                <button id="btn-back">Volver a Juegos</button>
+            </div>
+        </main>
+        <script type="module" src="js/game1/game1.js"></script>
+        <script>
+            document.getElementById('btn-back').addEventListener('click', ()=>{ location.href='index.html' });
+        </script>
+    </body>
+</html>

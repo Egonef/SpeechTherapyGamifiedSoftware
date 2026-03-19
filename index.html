@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Inicio — Software gamificado para logopedia infantil</title>
+        <link rel="stylesheet" href="src/common/css/base.css">
+        <link rel="stylesheet" href="src/common/css/components.css">
+        <script defer src="src/common/js/router.js"></script>
+    </head>
+    <body>
+        <main class="container">
+            <h1 data-intl="app.title">Inicio — Software gamificado para logopedia infantil</h1>
+            <p data-intl="app.chooseSection">Placeholder para cambiar de sección:</p>
+            <div class="button-row">
+                <button id="btn-games" data-intl="nav.games">Ir a Juegos</button>
+                <button id="btn-analysis" data-intl="nav.analysis">Ir a Análisis</button>
+            </div>
+        </main>
+
+        <script src="src/locales/es.js"></script>
+        <script src="src/locales/en.js"></script>
+        <script src="src/common/js/intl.js"></script>
+
+        <script type="module">
+            document.getElementById('btn-games').addEventListener('click', ()=>{
+                location.href = 'src/games/index.html';
+            });
+            document.getElementById('btn-analysis').addEventListener('click', ()=>{
+                location.href = 'src/analysis/index.html';
+            });
+
+            // initialize translations asynchronously so UI wiring does not block
+            if(window.intl && typeof window.intl.initializeIntl === 'function'){
+                window.intl.initializeIntl().catch(()=>{});
+            }
+        </script>
+    </body>
+</html>

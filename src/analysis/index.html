@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Análisis — TFG</title>
+        <link rel="stylesheet" href="../common/css/base.css">
+        <link rel="stylesheet" href="css/dashboard.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <main class="container">
+            <h1 data-intl="analysis.title">Dashboard de Análisis</h1>
+            <p data-intl="analysis.summary">Resumen de resultados</p>
+            <canvas id="chart" width="600" height="300"></canvas>
+            <div class="button-row">
+                <button id="btn-refresh" data-intl="analysis.loadData">Cargar datos</button>
+                <button id="btn-back" data-intl="analysis.back">Volver</button>
+            </div>
+        </main>
+
+        <script src="../locales/es.js"></script>
+        <script src="../locales/en.js"></script>
+        <script src="../common/js/intl.js"></script>
+
+        <script type="module">
+            if(window.intl && typeof window.intl.initializeIntl === 'function'){
+                window.intl.initializeIntl().catch(()=>{});
+            }
+        </script>
+
+        <script src="../../data/sample-results.js"></script>
+        <script type="module" src="js/dashboard.js"></script>
+        <script>
+            document.getElementById('btn-back').addEventListener('click', ()=>{ location.href='../../index.html' });
+        </script>
+    </body>
+</html>
