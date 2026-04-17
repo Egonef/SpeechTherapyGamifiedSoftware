@@ -1,14 +1,12 @@
 //Lista de animales
-const animals = [
+export const animals = [
     "Perro",
     "Vaca",
     "Cabra",
-    "Ciervo",
     "Rinoceronte",
     "Elefante",
-    "León",
     "Tigre",
-    "Hipopótamo",
+    "Hipopotamo",
     "Caballo",
     "Cerdo",
     "Delfín",
@@ -16,7 +14,7 @@ const animals = [
     "Pinguino",
     "Tiburón",
     "Ballena",
-    "Tortuga marina",
+    "Tortuga",
     "Camello",
     "Jirafa",
     "Toro"

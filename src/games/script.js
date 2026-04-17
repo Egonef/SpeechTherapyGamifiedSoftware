@@ -1,3 +1,5 @@
+import vocabulario from "./vocabulario.js";
+
 const burbujasContainer = document.getElementById("burbujas");
 const caldero = document.getElementById("caldero");
 
@@ -95,10 +97,11 @@ function manejarClick(burbujaSeleccionadaF1) {
 
   switch (burbujaSeleccionadaF1) {
     case 1:
-      alert("Has seleccionado VOCABULARIO");
+
       
       burbujasContainer.innerHTML = "";
       caldero.style.display = "none";
+      vocabulario();
       break;
     case 2:
       alert("Has seleccionado IMAGEN-SOMBRA");

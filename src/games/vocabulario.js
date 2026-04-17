@@ -4,14 +4,14 @@
 
 import { animals } from "./data/lista.js";
 
-function vocabulario() {
+export default function vocabulario() {
 
 //Generamos un vector de animales dinámico  para iterar por ellos
 
 const animalVector = animals.map(animal => ({
         name: animal,
-        image: `./assets/images/${animal}.png`,
-        audio: `./assets/audio/${animal}.m4a`
+        image: `./assets/animales/${animal}.png`,
+        audio: `./sounds/animales/${animal}.m4a`
 }));
 
 let randomIndex = Math.floor(Math.random() * animalVector.length);
@@ -19,11 +19,16 @@ let randomIndex = Math.floor(Math.random() * animalVector.length);
 function mostrarAnimal(index) {
         const animal = animalVector[index];
         const container = document.getElementById('game-container');
-        container.innerHTML = `
-                <img src="${animal.image}" alt="${animal.name}" style="max-width:200px;">
-                <button id="play-audio">🔊 Escuchar sonido</button>
-                <button id="next-animal">➡️ Siguiente</button>
-        `;
+container.innerHTML = `<div class="animal-card">
+    <div class="animal-image-wrapper">
+        <img src="${animal.image}" alt="${animal.name}" class="animal-image">
+    </div>
+    <div class="audio-controls">
+        <button id="play-audio" class="play-audio">🔊 Escuchar sonido</button>
+        <button id="next-animal" class="next-animal">➡️ Siguiente</button>
+    </div>
+</div>`;
+
 
         document.getElementById('play-audio').onclick = () => {
             const audio = new Audio(animal.audio);
@@ -44,7 +49,7 @@ function mostrarAnimal(index) {
 }
 
 // Exporta la función para usarla en tu app principal
-export default vocabulario;
+
 
 
 
