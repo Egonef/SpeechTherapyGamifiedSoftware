@@ -1,0 +1,149 @@
+
+
+body {
+  background-image: url("assets/FondoSinCaldero.png");
+  background-size: 100% 98%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow: hidden;
+  font-family: 'OpenDyslexic', sans-serif;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+}
+
+/* Caldero */
+.caldero {
+  position: absolute;
+  width: 30%;
+  top: 44%;
+
+
+
+
+}
+
+/* Contenedor burbujas */
+.burbujas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Burbujas individuales */
+.burbuja {
+
+  position: absolute;
+  width: 12%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.burbuja img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.burbuja:hover {
+  transform: scale(1.2);
+}
+
+/* Posiciones (responsive relativo) */
+.pos1 { top: 40%; left: 25%; }
+.pos2 { top: 40%; left: 63%; }
+.pos3 { top: 30%; left: 35%; }
+.pos4 { top: 30%; left: 51%; }
+
+/* Animación aparición */
+@keyframes pop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.burbuja {
+  animation: pop 0.4s ease;
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+.texto-burbuja{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: indigo;
+  font-size: clamp(13px, 3vw, 10px);
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none; /* para que el click pase */
+
+}
+
+/* contenedor de iconos dentro de la burbuja */
+.fila-iconos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+}
+
+.icono-burbuja {
+  position: absolute;
+  width: 100%; /* Ajusta según el tamaño deseado */
+  height: auto;
+  pointer-events: none;
+}
+
+/* Triángulo equilátero dentro del círculo */
+.icono1 {
+  /*Arribacentro*/top: -20%;
+  transform: scale(0.2);
+  -webkit-transform: scale(0.4);
+
+}
+.icono2 {
+  /*Abajodere*/top: 10%;
+  left: 20%;
+  transform: scale(0.2);
+  -webkit-transform: scale(0.4);
+
+}
+.icono3 {
+  /*Abajoizq*/top: 15%;
+  right: 20%;
+  transform: scale(0.2);
+  -webkit-transform: scale(0.4);
+
+}
+
+
+
