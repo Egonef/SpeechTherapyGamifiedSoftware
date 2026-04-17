@@ -96,6 +96,7 @@ function manejarClick(burbujaSeleccionadaF1) {
   switch (burbujaSeleccionadaF1) {
     case 1:
       alert("Has seleccionado VOCABULARIO");
+      
       burbujasContainer.innerHTML = "";
       caldero.style.display = "none";
       break;
