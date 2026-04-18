@@ -162,6 +162,7 @@ body {
     width: 100%;
     height: 80%; /* Altura fija para reservar espacio */
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
@@ -184,7 +185,7 @@ body {
   
 }
 
-.play-audio, .next-animal {
+.play-audio, .next-animal ,.record-audio {
     padding: 0.8em 2em;
     font-size: 1.2em;
     cursor: pointer;
