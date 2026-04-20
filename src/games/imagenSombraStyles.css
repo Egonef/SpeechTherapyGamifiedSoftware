@@ -25,9 +25,9 @@
 
 .animal-sombra{
     width: 100%;
-    height: 80%; /* Altura fija para reservar espacio */
+    height: 70%; /* Altura fija para reservar espacio */
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    justify-content: space-around;
+
+    
 }
