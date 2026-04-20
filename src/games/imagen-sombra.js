@@ -22,15 +22,18 @@ if (randomIndex1 === randomIndex2) {
 function mostrarAnimal(index1, index2) {
     const animal = animalVector[index1];
     const animal2 = animalVector[index2];
+    
     const container = document.getElementById('game-container');
 container.innerHTML = `
-    <div class="animal-card">
-        <div class="animal-image-wrapper">
+    <div class="containerIS">
+        <div class="animalDragContainer">
             <img src="${animal.image}" alt="${animal.name}" id="animal1" class="animal-image2">
         </div>
         <div class="animal-sombra">
-            <div style="background-color: black; width: 300px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;">
-            </div>
+            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
+            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
+            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
+            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
         </div>
     </div>`;
 

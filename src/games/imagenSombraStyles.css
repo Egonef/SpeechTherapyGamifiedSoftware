@@ -1,0 +1,33 @@
+
+
+.containerIS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    width: 100vw;  /* Ocupa todo el ancho de la ventana */
+    position: fixed; /* Centrado absoluto */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Encima del resto */
+}
+.animalDragContainer {
+    width: 100%;
+    height: 40%; /* Altura fija para reservar espacio */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+  
+
+}
+
+.animal-sombra{
+    width: 100%;
+    height: 80%; /* Altura fija para reservar espacio */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+}
