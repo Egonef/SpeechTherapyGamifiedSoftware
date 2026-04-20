@@ -99,7 +99,7 @@ playRecBtn.onclick = () => {
     mostrarAnimal(randomIndex);
 }
 
-// Exporta la función para usarla en tu app principal
+
 
 
 

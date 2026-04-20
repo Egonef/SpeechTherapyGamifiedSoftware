@@ -1,4 +1,6 @@
 import vocabulario from "./vocabulario.js";
+import vocabularioII from "./vocabularioII.js";
+import imagenSombra from "./imagen-sombra.js";
 
 const burbujasContainer = document.getElementById("burbujas");
 const caldero = document.getElementById("caldero");
@@ -104,14 +106,16 @@ function manejarClick(burbujaSeleccionadaF1) {
       vocabulario();
       break;
     case 2:
-      alert("Has seleccionado IMAGEN-SOMBRA");
+      
       burbujasContainer.innerHTML = "";
       caldero.style.display = "none";
+      imagenSombra();
       break;
     case 3:
-      alert("Has seleccionado VOCABULARIO II");
+      
       burbujasContainer.innerHTML = "";
       caldero.style.display = "none";
+       vocabularioII();
       break;
     case 4:
       alert("Has seleccionado PARTE-TODO");
