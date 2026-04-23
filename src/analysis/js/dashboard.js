@@ -27,3 +27,6 @@ async function loadAndRender(){
 
 document.getElementById('btn-refresh').addEventListener('click', loadAndRender);
 loadAndRender();
+
+
+

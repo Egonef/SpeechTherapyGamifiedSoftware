@@ -1,5 +1,5 @@
 // storage.js - pequeña capa para persistencia con IndexedDB
-const DB_NAME = 'tfg_db';
+const DB_NAME = 'patients_results_db';
 const DB_VERSION = 1;
 const STORE_RESULTS = 'results';
 
