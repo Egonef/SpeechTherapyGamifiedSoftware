@@ -36,9 +36,25 @@
                 <canvas id="progressChart" width="400" height="200"></canvas>
 
             </section>
+
+            <section id="dataTable" class="hidden">
+                <h1 data-intl="analysis.dataTableTitle">Tabla de Datos</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-intl="analysis.table.date">Fecha</th>
+                            <th data-intl="analysis.table.score">Puntuación</th>
+                            <th data-intl="analysis.table.duration">Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
+                        
+                    </tbody>
+                </table>
+            </section>
             
             
         </main>
-        <script src="js/dashboard.js"></script>
+        <script type="module" src="js/dashboard.js"></script>
     </body>
 </html>
