@@ -28,6 +28,11 @@
     height: 70%; /* Altura fija para reservar espacio */
     display: flex;
     flex-direction: row;
+    margin-left: 30%;
+    margin-right: 30%;
 
     
 }
+
+
+

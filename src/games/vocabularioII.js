@@ -27,8 +27,8 @@ function mostrarAnimal(index1, index2) {
 container.innerHTML = `
     <div class="animal-card">
         <div class="animal-image-wrapper">
-            <img src="${animal.image}" alt="${animal.name}" id="animal1" class="animal-image2">
-            <img src="${animal2.image}" alt="${animal2.name}" id="animal2" class="animal-image2">
+            <img src="${animal.image}" alt="${animal.name}" id="animal1" >
+            <img src="${animal2.image}" alt="${animal2.name}" id="animal2">
         </div>
         <div class="audio-controls">
             <button id="play-audio" class="play-audio">🔊</button>

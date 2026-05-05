@@ -27,16 +27,75 @@ function mostrarAnimal(index1, index2) {
 container.innerHTML = `
     <div class="containerIS">
         <div class="animalDragContainer">
-            <img src="${animal.image}" alt="${animal.name}" id="animal1" class="animal-image2">
+            <img src="${animal.image}" alt="${animal.name}" id="animal1" class="animal-image2" draggable="false">
         </div>
         <div class="animal-sombra">
-            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
-            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
-            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
-            <div style="background-color: black; width: 400px; height: 300px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: cover; -webkit-mask-size: cover;"></div>
+            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: 350px; -webkit-mask-size: 350px; "></div>
+            <div class="drop" data-correct="true" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal.image}'); -webkit-mask-image: url('${animal.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
+            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
+            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
         </div>
     </div>`;
 
+
+    
+    const draggable = document.getElementById("animal1");
+    let offsetX, offsetY, isDragging = false;
+
+    draggable.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        draggable.style.position = 'absolute';
+        draggable.style.zIndex = 1000;
+        offsetX = e.clientX - draggable.getBoundingClientRect().left;
+        offsetY = e.clientY - draggable.getBoundingClientRect().top;
+        draggable.style.cursor = 'grabbing';
+        draggable.style.width = '300px'
+    });
+
+    
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        draggable.style.left = (e.clientX - 100) + 'px';
+        console.log(e.clientX);
+        console.log(e.clientY);
+        draggable.style.top = (e.clientY - 100) + 'px';
+        draggable.style.width = '300px';
+    });
+        
+    document.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        draggable.style.cursor = 'grab';
+
+        // Verifica si está sobre alguna silueta
+        const drops = document.querySelectorAll('.drop');
+        let dropped = false;
+        drops.forEach(dropZone => {
+            const rect = dropZone.getBoundingClientRect();
+            const x = e.clientX, y = e.clientY;
+            if (x > rect.left && x < rect.right && y > rect.top && y < rect.bottom) {
+                dropped = true;
+                const isCorrect = dropZone.getAttribute('data-correct') === 'true';
+                if (isCorrect) {
+                    alert('¡Correcto!');
+                    
+                } else {
+                    alert('Intenta de nuevo');
+                    draggable.style.left = '';
+                    draggable.style.top = '';
+                    draggable.style.position = 'relative';
+                    draggable.style.zIndex = '';
+                }
+            }
+        });
+        // Opcional: regresa la imagen a su sitio si no se soltó sobre ninguna silueta
+        if (!dropped) {
+            draggable.style.left = '';
+            draggable.style.top = '';
+            draggable.style.position = 'relative';
+            draggable.style.zIndex = '';
+        }
+    });
     
 
     }
