@@ -40,14 +40,12 @@ container.innerHTML = `
 
     
     const draggable = document.getElementById("animal1");
-    let offsetX, offsetY, isDragging = false;
+    let isDragging = false;
 
     draggable.addEventListener('mousedown', (e) => {
         isDragging = true;
         draggable.style.position = 'absolute';
         draggable.style.zIndex = 1000;
-        offsetX = e.clientX - draggable.getBoundingClientRect().left;
-        offsetY = e.clientY - draggable.getBoundingClientRect().top;
         draggable.style.cursor = 'grabbing';
         draggable.style.width = '300px'
     });
