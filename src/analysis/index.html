@@ -6,33 +6,60 @@
         <title>Análisis — TFG</title>
         <link rel="stylesheet" href="../common/css/base.css">
         <link rel="stylesheet" href="css/dashboard.css">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
-        <main class="container">
-            <h1 data-intl="analysis.title">Dashboard de Análisis</h1>
-            <p data-intl="analysis.summary">Resumen de resultados</p>
-            <canvas id="chart" width="600" height="300"></canvas>
-            <div class="button-row">
-                <button id="btn-refresh" data-intl="analysis.loadData">Cargar datos</button>
-                <button id="btn-back" data-intl="analysis.back">Volver</button>
-            </div>
+        <main id="analysisDashboard">
+
+            <menu id="sidebarMenu">
+
+
+                <a href="../../index.html" data-intl="menu.home">Inicio</a>
+                
+                <div class="dropdownContainer">
+                    <h4 id="dropdownTitle" >Selección de paciente:</h4>
+                    <select class="dropdown">
+                        <option value="" disabled selected data-intl="menu.selectPatient">Seleccionar Paciente</option>
+                        <option value="General">General</option>
+                        <option value="Paciente1">Paciente 1</option>
+                        <option value="Paciente2">Paciente 2</option>
+                    </select>
+                </div>
+
+                <button id="overviewBtn" class="sidebarEntry" data-intl="menu.overview">Visión General</button>
+                <button id="dataTableBtn" class="sidebarEntry" data-intl="menu.dataTable">Tabla de Datos</button>
+            </menu>
+
+            <section id="analysisContent">
+                <h1 data-intl="analysis.title">Dashboard de Análisis</h1>
+                <p data-intl="analysis.summary">Resumen de resultados</p>
+
+                <canvas id="progressChart" width="400" height="200"></canvas>
+
+            </section>
+
+            <section id="dataTable" class="hidden">
+                <h1 data-intl="analysis.dataTableTitle">Tabla de Datos</h1>
+                <div class="dataTableCard">
+                    <table class="resultsTable">
+                        <thead>
+                            <tr>
+                                <th data-intl="analysis.table.date">Fecha</th>
+                                <th data-intl="analysis.table.game">Juego</th>
+                                <th data-intl="analysis.table.level">Nivel</th>
+                                <th data-intl="analysis.table.aciertos">Aciertos</th>
+                                <th data-intl="analysis.table.errores">Errores</th>
+                                <th data-intl="analysis.table.duration">Duración</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            
         </main>
-
-        <script src="../locales/es.js"></script>
-        <script src="../locales/en.js"></script>
-        <script src="../common/js/intl.js"></script>
-
-        <script type="module">
-            if(window.intl && typeof window.intl.initializeIntl === 'function'){
-                window.intl.initializeIntl().catch(()=>{});
-            }
-        </script>
-
-        <script src="../../data/sample-results.js"></script>
         <script type="module" src="js/dashboard.js"></script>
-        <script>
-            document.getElementById('btn-back').addEventListener('click', ()=>{ location.href='../../index.html' });
-        </script>
     </body>
 </html>
