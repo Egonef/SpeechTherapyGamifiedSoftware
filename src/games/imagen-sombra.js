@@ -11,17 +11,41 @@ const animalVector = animals.map(animal => ({
         audio: `./sounds/animales/${animal}.m4a`
 }));
 
-let randomIndex1 = Math.floor(Math.random() * animalVector.length);
-let randomIndex2 = Math.floor(Math.random() * animalVector.length);
 
-if (randomIndex1 === randomIndex2) {
-    randomIndex2 = (randomIndex2 + 1) % animalVector.length;
+
+const vectorAleatorio = new Array(animalVector.length);
+
+for (let i = 0; i < animalVector.length; i++) {
+    vectorAleatorio[i] = i;
+}
+
+vectorAleatorio.sort(() => Math.random() > 0.5 ? 1 : -1); // Mezcla el vector de índices
+
+
+
+let randomIndex1 = 0;
+let randomIndex2 = 0;
+let randomIndex3 = 0;
+let randomIndex4 = 0;
+
+
+for(let i = 0; i < vectorAleatorio.length; i++) {
+    randomIndex1 = vectorAleatorio[0];
+    randomIndex2 = vectorAleatorio[1];
+    randomIndex3 = vectorAleatorio[2];
+    randomIndex4 = vectorAleatorio[3];
+    break;
 }
 
 
-function mostrarAnimal(index1, index2) {
+
+
+
+function mostrarAnimal(index1, index2, index3, index4) {
     const animal = animalVector[index1];
     const animal2 = animalVector[index2];
+    const animal3 = animalVector[index3];
+    const animal4 = animalVector[index4];
     
     const container = document.getElementById('game-container');
 container.innerHTML = `
@@ -32,8 +56,8 @@ container.innerHTML = `
         <div class="animal-sombra">
             <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: 350px; -webkit-mask-size: 350px; "></div>
             <div class="drop" data-correct="true" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal.image}'); -webkit-mask-image: url('${animal.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
-            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
-            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal2.image}'); -webkit-mask-image: url('${animal2.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
+            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal3.image}'); -webkit-mask-image: url('${animal3.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
+            <div class="drop" data-correct="false" style="background-color: black; width: 350px; height: 250px; mask-image: url('${animal4.image}'); -webkit-mask-image: url('${animal4.image}'); mask-size: 350px; -webkit-mask-size: 350px;"></div>
         </div>
     </div>`;
 
@@ -99,7 +123,7 @@ container.innerHTML = `
     }
 
     // Mostrar el primer animal al iniciar
-    mostrarAnimal(randomIndex1,randomIndex2);
+    mostrarAnimal(randomIndex1,randomIndex2, randomIndex3, randomIndex4);
 }
 
 
