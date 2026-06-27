@@ -72,6 +72,7 @@ container.innerHTML = `
         draggable.style.zIndex = 1000;
         draggable.style.cursor = 'grabbing';
         draggable.style.width = '300px'
+        
     });
 
     

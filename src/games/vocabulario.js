@@ -25,11 +25,11 @@ container.innerHTML = `
             <img src="${animal.image}" alt="${animal.name}" class="animal-image">
         </div>
         <div class="audio-controls">
-            <button id="play-audio" class="play-audio">🔊</button>
-            <button id="record-audio" class="record-audio">🎤</button>
-            <button id="stop-recording" class="stop-recording" disabled>⏹️ Parar</button>
-            <button id="play-recording" class="play-recording" disabled>▶️ Escuchar</button>
-            <button id="next-animal" class="next-animal">➡️</button>
+            <button id="play-audio" class="play-audio">Play</button>
+            <button id="record-audio" class="record-audio">Grabar</button>
+            <button id="stop-recording" class="stop-recording" disabled>Parar</button>
+            <button id="play-recording" class="play-recording" disabled>▶Escuchar</button>
+            <button id="next-animal" class="next-animal">Sig</button>
         </div>
     </div>`;
 

@@ -9,7 +9,7 @@ export const animals = [
     "Hipopotamo",
     "Caballo",
     "Cerdo",
-    "Delfín",
+    "Delfin",
     "Orca",
     "Pinguino",
     "Tiburón",
